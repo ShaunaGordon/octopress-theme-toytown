@@ -1,0 +1,50 @@
+@mixin mask-image($img, $repeat: no-repeat){
+  @include experimental(mask-image, image-url($img), -webkit, -moz, -o, -ms);
+  @include experimental(mask-repeat, $repeat, -webkit, -moz, -o, -ms);
+  width: image-width($img);
+  height: image-height($img);
+}
+
+@mixin shadow-box($border: #fff .5em solid, $shadow: rgba(#000, .15) 0 1px 4px, $border-radius: .3em) {
+  @include border-radius($border-radius);
+  @include box-shadow($shadow);
+  @include box-sizing(border-box);
+  border: $border;
+}
+
+@mixin selection($bg, $color: inherit, $text-shadow: none){
+  * {
+    &::-moz-selection { background: $bg; color: $color; text-shadow: $text-shadow; }
+    &::-webkit-selection { background: $bg; color: $color; text-shadow: $text-shadow; }
+    &::selection { background: $bg; color: $color; text-shadow: $text-shadow; }
+  }
+}
+
+@function text-color($color, $dark: dark, $light: light){
+  $text-color: ( (red($color)*299) + (green($color)*587) + (blue($color)*114) ) / 1000;
+  $text-color: if($text-color >= 150, $dark, $light);
+  @return $text-color;
+}
+
+@mixin collapse-sidebar {
+  float: none;
+  width: auto;
+  clear: left;
+  margin: 0;
+  padding: 0 $gutter-medium 1px;
+  background-color: lighten($color-main, 2);
+  border-top: 1px solid lighten($color-accent, 4);
+  section {
+    &.odd, &.even { float: left; width: 48%; }
+    &.odd { margin-left: 0; }
+    &.even { margin-left: 4%; }
+  }
+  &.thirds section {
+    width: 30%;
+    margin-left: 5%;
+    &.first {
+      margin-left: 0;
+      clear: both;
+    }
+  }
+}

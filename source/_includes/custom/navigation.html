@@ -1,0 +1,16 @@
+<ul class="main-navigation">
+	{% if site.about_page %}
+	<li><a href="{{ root_url }}/{{ site.about_page }}">About Me</a></li>
+	{% endif %}
+	{% if site.highlights_page %}
+	<li><a href="{{ root_url }}/{{ site.highlights_page }}">
+		{% if site.highlights_text %}
+			{{ site.highlights_text }}
+		{% else %}
+			Highlights
+		{% endif %}
+	</a></li>
+	{% endif %}
+	<li><a href="{{ root_url }}/">Blog</a></li>
+	<li><a href="{{ root_url }}/blog/archives">Archives</a></li>
+ </ul>

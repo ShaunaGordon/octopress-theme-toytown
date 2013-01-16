@@ -1,0 +1,292 @@
+* {
+  -o-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  max-width: $max-width;
+  position: relative;
+  margin: 0 auto;
+  padding-top: $gutter-medium;
+
+  > footer {
+    padding-left: $gutter-min;
+    padding-right: $gutter-min;
+  }
+
+  > header, > footer {
+    border-radius: $border-radius;
+    margin: 0 $gutter-min $gutter-medium;
+    overflow: hidden;
+
+    hgroup {
+      padding: $gutter-medium $gutter-min;
+
+      h1, h2 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 2.8em;
+      }
+    }
+
+    nav {
+      width: $content-width;
+      padding-top: $gutter-medium;
+
+      form, .subscription {
+        margin: 0;
+      }
+
+      li {
+        padding: $gutter-medium $gutter-min;
+        font-size: 1.1em;
+      }
+    }
+
+    fieldset {
+      border: 0;
+    }
+  }
+
+  .main-navigation, .subscription {
+    display: none;
+  }
+}
+
+
+#content {
+  overflow: hidden;
+  margin: 0 $gutter-min;
+
+
+  h1 {
+    margin-top: 0;
+  }
+
+  article, section {
+    padding: $gutter-medium $gutter-narrow;
+    margin-bottom: $gutter-medium;
+  }
+
+  article, > div section {
+    margin-right: $gutter-min;
+  }
+
+  > div {
+    .pagination {
+      padding: $gutter-medium $gutter-min;
+      margin-bottom: $gutter-medium;
+    }
+  }
+
+  section {
+    overflow: hidden;
+    li {
+      margin: $gutter-min*2 0;
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+#tag-cloud {
+  display: block;
+  overflow: hidden;
+  a {
+    display: block;
+    margin-bottom: $gutter-medium;
+  }
+}
+
+@if $indented-lists == false {
+  @media only screen and (min-width: 768px) {
+    ul, ol { margin-left: 0; padding-left: 0; }
+  }
+}
+
+@if $list-styles == false {
+  ul li { list-style: none; }
+}
+
+@media all and (min-width: 25em) { // 400px with Junga font
+  body {
+    .mobile-nav {
+      display: none;
+    }
+
+    .main-navigation, .subscription {
+      display: block;
+    }
+
+    > header, > footer {
+
+      nav, hgroup {
+        float: left;
+      }
+
+      hgroup {
+        max-width: $sidebar-width;
+      }
+
+      nav {
+        form, .subscription {
+          float: right;
+          clear: right;
+        }
+      }
+    }
+  }
+
+  #tag-cloud {
+    a {
+      float: left;
+      width: 30%;
+    }
+  }
+}
+
+@media all and (min-width: 35.625em) { // 570px with Junga font
+  body {
+    > footer {
+      padding-left: $gutter-narrow;
+      padding-right: $gutter-narrow;
+    }
+
+    > header, > footer {
+      margin-left: $gutter-narrow;
+      margin-right: $gutter-narrow;
+
+      hgroup {
+        padding-left: $gutter-narrow;
+        padding-right: $gutter-narrow;
+      }
+
+      nav {
+
+        li {
+          padding-left: $gutter-narrow;
+          padding-right: $gutter-narrow;
+        }
+      }
+    }
+  }
+
+
+  #content {
+    margin-left: $gutter-narrow;
+    margin-right: $gutter-narrow;
+
+    article, > div section {
+      margin-right: $gutter-narrow;
+    }
+
+    > div {
+      .pagination {
+        padding-left: $gutter-narrow;
+        padding-right: $gutter-narrow;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 57.5em) { // 920px with Junga font
+  #content {
+    > div, > aside {
+      float: left;
+    }
+
+    > div {
+      width: $content-width;
+    }
+
+    > aside {
+      width: $sidebar-width;
+    }
+  }
+
+  body {
+    > header, > footer {
+      nav {
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  #tag-cloud {
+    display: inline;
+    overflow: visible;
+    a {
+      display: inline;
+      float: none;
+    }
+  }
+}
+
+@media all and (min-width: 75em) { // 1200px with Junga font
+  body {
+    > footer {
+      padding-left: $gutter-medium;
+      padding-right: $gutter-medium;
+    }
+
+    > header, > footer {
+      margin-left: $gutter-medium;
+      margin-right: $gutter-medium;
+
+      hgroup {
+        padding-left: $gutter-medium;
+        padding-right: $gutter-medium;
+      }
+
+      nav {
+
+        li {
+          padding-left: $gutter-medium;
+          padding-right: $gutter-medium;
+        }
+      }
+    }
+  }
+
+
+  #content {
+    margin-left: $gutter-medium;
+    margin-right: $gutter-medium;
+
+    article, > div section {
+      margin-right: $gutter-medium;
+    }
+
+    > div {
+      .pagination {
+        padding-left: $gutter-medium;
+        padding-right: $gutter-medium;
+      }
+    }
+  }
+}

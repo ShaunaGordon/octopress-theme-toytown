@@ -18,6 +18,7 @@ body {
   color: darken($color-complement, 30%);
 
   > header, > footer {
+    background: darken($color-complement, 10%);
     background: rgba(darken($color-complement, 20%), .7);
     color: $color-accent;
     a {
@@ -32,11 +33,13 @@ body {
 
 #content {
   article, .pagination {
+    background: lighten($color-main, 10%);
     background: rgba(lighten($color-main, 20%), .75);
     border-radius: $border-radius;
   }
 
   section {
+    background: lighten($color-main, 40%);
     background: rgba(lighten($color-main, 40%), .8);
     border-radius: $border-radius;
   }

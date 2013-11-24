@@ -16,10 +16,14 @@ a {
 
 .left {
   float: left;
+  margin-right: $gutter-min;
+  margin-bottom: $gutter-min;
 }
 
 .right {
   float: right;
+  margin-left: $gutter-min;
+  margin-bottom: $gutter-min;
 }
 
 body {
@@ -194,6 +198,15 @@ body {
     }
   }
 
+  .left {
+    margin-right: $gutter-narrow;
+    margin-bottom: $gutter-narrow;
+  }
+
+  .right {
+    margin-left: $gutter-narrow;
+    margin-bottom: $gutter-narrow;
+  }
 
   #content {
     margin-left: $gutter-narrow;
@@ -271,6 +284,16 @@ body {
         }
       }
     }
+  }
+
+  .left {
+    margin-right: $gutter-medium;
+    margin-bottom: $gutter-medium;
+  }
+
+  .right {
+    margin-left: $gutter-medium;
+    margin-bottom: $gutter-medium;
   }
 
 
